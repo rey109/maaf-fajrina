@@ -337,6 +337,9 @@
         z-index: 60;
         margin: 0;
         animation: wiggle 0.4s ease;
+        white-space: normal;
+        max-width: 85vw;
+        box-sizing: border-box;
       }
 
       @keyframes wiggle {
@@ -609,18 +612,6 @@
           if (now - lastEscape < 130) return;
           lastEscape = now;
 
-          var pad = 10;
-          var bw = noBtn.offsetWidth;
-          var bh = noBtn.offsetHeight;
-          var maxX = Math.max(window.innerWidth - bw - pad * 2, pad);
-          var maxY = Math.max(window.innerHeight - bh - pad * 2, pad);
-          var x = pad + Math.random() * maxX;
-          var y = pad + Math.random() * maxY;
-
-          noBtn.classList.add("escaped");
-          noBtn.style.left = x + "px";
-          noBtn.style.top = y + "px";
-
           escapes++;
           noBtn.textContent =
             runawayLabels[Math.min(escapes - 1, runawayLabels.length - 1)];
@@ -630,14 +621,23 @@
             hint.textContent = hintLines[hintLines.length - 1];
           }
 
-          // Make green button grow!
-          var scale = 1 + escapes * 0.18;
-          yesBtn.style.transform = "scale(" + scale + ")";
-          yesBtn.style.transformOrigin = "center";
+          noBtn.classList.add("escaped");
 
-          // Make red button shrink!
-          var noScale = Math.max(1 - escapes * 0.05, 0.2);
-          noBtn.style.transform = "scale(" + noScale + ")";
+          // Revert scaling
+          yesBtn.style.transform = "";
+          noBtn.style.transform = "";
+
+          // Calculate bounds after updating text content so width is accurate
+          var pad = 24; // Extra padding so it stays safe from borders
+          var bw = noBtn.offsetWidth;
+          var bh = noBtn.offsetHeight;
+          var maxX = Math.max(window.innerWidth - bw - pad * 2, pad);
+          var maxY = Math.max(window.innerHeight - bh - pad * 2, pad);
+          var x = pad + Math.random() * maxX;
+          var y = pad + Math.random() * maxY;
+
+          noBtn.style.left = x + "px";
+          noBtn.style.top = y + "px";
         }
 
         /* run away before the pointer/tap can land on the button */
