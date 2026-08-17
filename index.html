@@ -573,15 +573,34 @@
           "Masih gak mau! 😝",
           "Kejar dulu dong! 🏃‍♀️",
           "Susaaah ditangkap 🤭",
-          "Oke aku nyerah 🥺",
-          "Plis maafin Rama 💔",
-          "Lah, kok masih ngejar 😳",
+          "Mau ngejar sampai kapan? 😜",
+          "Duh, gesit banget sih! 🧐",
+          "Bleeer! Ga kena 😛",
+          "Eits, hampir aja! 🫣",
+          "Yakin gamau maafin? 🥺",
+          "Rama udah nangis di pojokan 😭",
+          "Masih tega nih? 💔",
+          "Plis klik yang hijau aja 🥺👉👈",
+          "Capek kan ngejar terus? 🥵",
+          "Tombol ini ga bakal bisa diklik 🚫",
+          "Tinggal klik 'Maafin Rama' kok susah 💚",
+          "Udah deh, nyerah aja ya? 🤗",
+          "Ayolah dimaafin... 🙏",
+          "Nona Fajrina cantik deh kalau maafin 😍",
+          "Oke, tombol ini bakal mengecil! 📉",
+          "Hampir ga kelihatan kan? 🔍",
+          "Duh tinggal seukuran semut 🐜",
+          "Hilang deh! Hahaha 👻",
         ];
         var hintLines = [
           "Hihihi, tombolnya kabur terus 😆",
           "Coba lagi, siapa tau kena 😝",
           "Klik yang hijau aja deh, lebih gampang 💚",
           "Rama udah nangis nih 🥺👉👈",
+          "Tombol hijaunya makin gede loh! 😲",
+          "Ayo dimaafin biar tombolnya berhenti kabur 🥰",
+          "Kayaknya tombol hijau udah nutupin layar ya? 😂",
+          "Sudah takdirnya harus memaafkan Rama! 💖",
         ];
 
         function moveButton(e) {
@@ -605,7 +624,20 @@
           escapes++;
           noBtn.textContent =
             runawayLabels[Math.min(escapes - 1, runawayLabels.length - 1)];
-          if (escapes <= hintLines.length) hint.textContent = hintLines[escapes - 1];
+          if (escapes <= hintLines.length) {
+            hint.textContent = hintLines[escapes - 1];
+          } else {
+            hint.textContent = hintLines[hintLines.length - 1];
+          }
+
+          // Make green button grow!
+          var scale = 1 + escapes * 0.18;
+          yesBtn.style.transform = "scale(" + scale + ")";
+          yesBtn.style.transformOrigin = "center";
+
+          // Make red button shrink!
+          var noScale = Math.max(1 - escapes * 0.05, 0.2);
+          noBtn.style.transform = "scale(" + noScale + ")";
         }
 
         /* run away before the pointer/tap can land on the button */
