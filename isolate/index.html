@@ -1,0 +1,714 @@
+<!doctype html>
+<html lang="id">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Surat Permintaan Maaf Spesial 💌</title>
+    <link
+      rel="icon"
+      href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>💌</text></svg>"
+    />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Baloo+2:wght@500;600;700;800&family=Poppins:ital,wght@0,400;0,500;0,600;0,700;1,400&display=swap"
+      rel="stylesheet"
+    />
+    <style>
+      :root {
+        --pink-50: #fff7fa;
+        --pink-100: #ffe9f2;
+        --pink-200: #ffd3e3;
+        --pink-300: #ffb4d1;
+        --purple-200: #eadcfc;
+        --purple-300: #d5bdf5;
+        --blue-200: #dcedfc;
+        --ink: #7d4a63;
+        --ink-soft: #a06b85;
+        --ink-faint: #c493a7;
+        --card: #fffdfe;
+        --green: #b6e8c9;
+        --green-deep: #2f7d55;
+        --green-edge: #a5dcb9;
+        --green-shadow: #8fc9a4;
+        --red: #ffc3c9;
+        --red-deep: #a63c49;
+        --red-edge: #f2aab2;
+        --red-shadow: #e69aa2;
+      }
+
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+      }
+
+      html,
+      body {
+        min-height: 100%;
+      }
+
+      body {
+        font-family: "Poppins", system-ui, -apple-system, sans-serif;
+        color: var(--ink);
+        min-height: 100dvh;
+        display: grid;
+        place-items: center;
+        padding: 28px 16px;
+        overflow-x: hidden;
+        background:
+          radial-gradient(720px 480px at 12% -6%, rgba(255, 196, 221, 0.55), transparent 62%),
+          radial-gradient(640px 460px at 105% 108%, rgba(178, 216, 252, 0.5), transparent 60%),
+          linear-gradient(155deg, #ffe6f0 0%, #f5e6ff 46%, #e2f0fd 100%);
+      }
+
+      ::selection {
+        background: var(--pink-300);
+        color: #fff;
+      }
+
+      /* ---------- floating background hearts ---------- */
+      #bg-float {
+        position: fixed;
+        inset: 0;
+        overflow: hidden;
+        pointer-events: none;
+        z-index: 0;
+      }
+
+      .floater {
+        position: absolute;
+        bottom: -12vh;
+        opacity: 0.7;
+        animation: floatUp linear infinite;
+        will-change: transform;
+        user-select: none;
+      }
+
+      @keyframes floatUp {
+        0% {
+          transform: translate3d(0, 0, 0) rotate(-6deg) scale(1);
+        }
+        25% {
+          transform: translate3d(30px, -26vh, 0) rotate(8deg) scale(1.08);
+        }
+        50% {
+          transform: translate3d(-22px, -52vh, 0) rotate(-8deg) scale(0.95);
+        }
+        75% {
+          transform: translate3d(26px, -78vh, 0) rotate(6deg) scale(1.06);
+        }
+        100% {
+          transform: translate3d(-16px, -112vh, 0) rotate(-6deg) scale(1);
+        }
+      }
+
+      /* ---------- card ---------- */
+      .card {
+        position: relative;
+        z-index: 1;
+        width: 100%;
+        max-width: 640px;
+        background: var(--card);
+        border: 3px solid #ffd9e8;
+        border-radius: 44px;
+        padding: clamp(30px, 6vw, 54px) clamp(22px, 5vw, 48px) clamp(34px, 6vw, 56px);
+        text-align: center;
+        box-shadow:
+          0 30px 70px -18px rgba(214, 120, 160, 0.45),
+          0 10px 26px -12px rgba(214, 120, 160, 0.2),
+          inset 0 2px 0 #fff;
+        animation: cardIn 0.9s cubic-bezier(0.2, 0.9, 0.3, 1.15) both;
+      }
+
+      .card.celebrated {
+        animation: pop 0.65s cubic-bezier(0.2, 0.9, 0.3, 1.3) both;
+      }
+
+      @keyframes cardIn {
+        from {
+          opacity: 0;
+          transform: translateY(30px) scale(0.95);
+        }
+        to {
+          opacity: 1;
+          transform: none;
+        }
+      }
+
+      @keyframes pop {
+        0% {
+          transform: scale(1);
+        }
+        35% {
+          transform: scale(1.045);
+        }
+        70% {
+          transform: scale(0.985);
+        }
+        100% {
+          transform: scale(1);
+        }
+      }
+
+      .sticker {
+        position: absolute;
+        pointer-events: none;
+        user-select: none;
+        font-size: 26px;
+        animation: bob 5.5s ease-in-out infinite;
+      }
+
+      .sticker-1 {
+        top: 16px;
+        left: 20px;
+        transform: rotate(-14deg);
+      }
+      .sticker-2 {
+        top: 20px;
+        right: 22px;
+        animation: twinkle 3.2s ease-in-out infinite;
+      }
+      .sticker-3 {
+        bottom: 18px;
+        left: 24px;
+        transform: rotate(12deg);
+        animation-delay: 1.4s;
+      }
+      .sticker-4 {
+        bottom: 20px;
+        right: 24px;
+        transform: rotate(-10deg);
+        animation-delay: 0.7s;
+      }
+
+      @keyframes bob {
+        0%,
+        100% {
+          transform: translateY(0) rotate(-8deg);
+        }
+        50% {
+          transform: translateY(-9px) rotate(6deg);
+        }
+      }
+
+      @keyframes twinkle {
+        0%,
+        100% {
+          opacity: 1;
+          transform: scale(1) rotate(0deg);
+        }
+        50% {
+          opacity: 0.5;
+          transform: scale(0.78) rotate(24deg);
+        }
+      }
+
+      .badge {
+        display: inline-flex;
+        align-items: center;
+        gap: 6px;
+        background: linear-gradient(180deg, #ffe6f0, #ffd6e6);
+        color: #b95f86;
+        font-size: 13px;
+        font-weight: 600;
+        letter-spacing: 0.03em;
+        padding: 8px 18px;
+        border-radius: 999px;
+        border: 1.5px solid #ffc3da;
+        box-shadow: 0 4px 12px -4px rgba(226, 122, 163, 0.35);
+      }
+
+      .title {
+        font-family: "Baloo 2", "Poppins", sans-serif;
+        font-weight: 800;
+        line-height: 1.12;
+        margin: 20px 0 10px;
+        font-size: clamp(1.9rem, 5.6vw, 2.9rem);
+        background: linear-gradient(92deg, #e26a9b 5%, #b98ae0 55%, #7fb6e8 100%);
+        -webkit-background-clip: text;
+        background-clip: text;
+        -webkit-text-fill-color: transparent;
+        color: var(--ink);
+      }
+
+      .squiggle {
+        width: 210px;
+        max-width: 60%;
+        height: 14px;
+        margin: 2px auto 6px;
+        display: block;
+      }
+
+      .letter {
+        font-size: clamp(15px, 2.4vw, 17.5px);
+        line-height: 1.9;
+        color: var(--ink-soft);
+        margin-top: 14px;
+        text-wrap: pretty;
+      }
+
+      .letter .hl {
+        font-weight: 600;
+        color: var(--ink);
+        background: linear-gradient(transparent 58%, #ffe1ec 58%);
+        padding: 0 3px;
+        border-radius: 8px;
+      }
+
+      .hint {
+        margin-top: 22px;
+        font-size: 14px;
+        font-style: italic;
+        color: var(--ink-faint);
+        transition: color 0.3s ease;
+      }
+
+      /* ---------- buttons ---------- */
+      .actions {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 18px;
+        justify-content: center;
+        align-items: center;
+        margin-top: 18px;
+      }
+
+      .btn {
+        font-family: "Poppins", sans-serif;
+        font-weight: 700;
+        font-size: clamp(15px, 3vw, 17px);
+        border: none;
+        cursor: pointer;
+        border-radius: 999px;
+        padding: 15px 34px;
+        min-width: 172px;
+        transition:
+          transform 0.18s ease,
+          box-shadow 0.18s ease,
+          filter 0.18s ease;
+      }
+
+      .btn:focus-visible {
+        outline: 3px solid var(--purple-300);
+        outline-offset: 3px;
+      }
+
+      .btn:active {
+        transform: translateY(3px) scale(0.98);
+      }
+
+      .btn-yes {
+        color: var(--green-deep);
+        background: linear-gradient(180deg, #d3f3de, var(--green));
+        border: 2px solid var(--green-edge);
+        box-shadow:
+          0 6px 0 var(--green-shadow),
+          0 14px 26px -10px rgba(100, 180, 135, 0.55);
+      }
+
+      .btn-yes:hover {
+        transform: translateY(-2px);
+        filter: brightness(1.03);
+        box-shadow:
+          0 8px 0 var(--green-shadow),
+          0 18px 32px -10px rgba(100, 180, 135, 0.6);
+      }
+
+      .btn-no {
+        color: var(--red-deep);
+        background: linear-gradient(180deg, #ffe0e2, var(--red));
+        border: 2px solid var(--red-edge);
+        box-shadow:
+          0 6px 0 var(--red-shadow),
+          0 14px 26px -10px rgba(230, 130, 140, 0.5);
+      }
+
+      .btn-no:hover {
+        transform: translateY(-2px);
+        filter: brightness(1.03);
+        box-shadow:
+          0 8px 0 var(--red-shadow),
+          0 18px 32px -10px rgba(230, 130, 140, 0.55);
+      }
+
+      .btn-no.escaped {
+        position: fixed;
+        z-index: 60;
+        margin: 0;
+        animation: wiggle 0.4s ease;
+      }
+
+      @keyframes wiggle {
+        0%,
+        100% {
+          transform: rotate(0deg);
+        }
+        25% {
+          transform: rotate(-6deg);
+        }
+        75% {
+          transform: rotate(6deg);
+        }
+      }
+
+      /* ---------- success state ---------- */
+      .success-heart {
+        font-size: 64px;
+        display: inline-block;
+        animation: heartBeat 1.1s ease-in-out infinite;
+        filter: drop-shadow(0 8px 16px rgba(226, 122, 163, 0.35));
+      }
+
+      @keyframes heartBeat {
+        0%,
+        100% {
+          transform: scale(1);
+        }
+        25% {
+          transform: scale(1.2);
+        }
+        40% {
+          transform: scale(0.94);
+        }
+        60% {
+          transform: scale(1.12);
+        }
+      }
+
+      .success-title {
+        font-family: "Baloo 2", "Poppins", sans-serif;
+        font-weight: 800;
+        font-size: clamp(1.7rem, 5vw, 2.4rem);
+        margin: 14px 0 10px;
+        background: linear-gradient(92deg, #e26a9b, #b98ae0 65%, #7fb6e8);
+        -webkit-background-clip: text;
+        background-clip: text;
+        -webkit-text-fill-color: transparent;
+        color: var(--ink);
+      }
+
+      .success-text {
+        font-size: clamp(16px, 2.6vw, 19px);
+        font-weight: 600;
+        line-height: 1.75;
+        color: var(--ink);
+      }
+
+      .success-sub {
+        margin-top: 14px;
+        font-size: 14px;
+        color: var(--ink-soft);
+      }
+
+      .btn-again {
+        margin-top: 24px;
+        color: #7a4a63;
+        background: linear-gradient(180deg, #f6e6ff, #eadcfc);
+        border: 2px solid #d5bdf5;
+        box-shadow:
+          0 6px 0 #c4a6ea,
+          0 14px 26px -10px rgba(160, 120, 210, 0.5);
+      }
+
+      .btn-again:hover {
+        transform: translateY(-2px);
+        box-shadow:
+          0 8px 0 #c4a6ea,
+          0 18px 32px -10px rgba(160, 120, 210, 0.55);
+      }
+
+      /* ---------- confetti / burst particles ---------- */
+      .burst {
+        position: fixed;
+        z-index: 90;
+        pointer-events: none;
+        user-select: none;
+        animation: burst ease-out forwards;
+      }
+
+      @keyframes burst {
+        0% {
+          transform: translate(-50%, -50%) scale(0.3) rotate(0deg);
+          opacity: 1;
+        }
+        100% {
+          transform: translate(calc(-50% + var(--tx)), calc(-50% + var(--ty)))
+            scale(1.15) rotate(var(--rot, 360deg));
+          opacity: 0;
+        }
+      }
+
+      .rain {
+        position: fixed;
+        top: -8vh;
+        z-index: 80;
+        pointer-events: none;
+        user-select: none;
+        animation: rainFall linear forwards;
+      }
+
+      @keyframes rainFall {
+        to {
+          transform: translateY(118vh) rotate(340deg);
+          opacity: 0.85;
+        }
+      }
+
+      footer {
+        position: relative;
+        z-index: 1;
+        margin-top: 26px;
+        font-size: 12.5px;
+        color: var(--ink-faint);
+        text-align: center;
+      }
+
+      /* ---------- responsive ---------- */
+      @media (max-width: 540px) {
+        body {
+          padding: 16px 12px;
+        }
+        .card {
+          border-radius: 34px;
+        }
+        .actions {
+          gap: 12px;
+        }
+        .btn {
+          min-width: 148px;
+          padding: 13px 22px;
+          font-size: 15px;
+        }
+        .sticker {
+          font-size: 20px;
+        }
+      }
+
+      @media (prefers-reduced-motion: reduce) {
+        .floater,
+        .sticker,
+        .burst,
+        .rain,
+        .btn,
+        .success-heart {
+          animation: none !important;
+          transition: none !important;
+        }
+      }
+    </style>
+    <script type="module" crossorigin src="/assets/index-QFLCZSlk.js"></script>
+  </head>
+
+  <body>
+    <div id="bg-float" aria-hidden="true"></div>
+
+    <main class="card" id="card">
+      <span class="sticker sticker-1" aria-hidden="true">🌸</span>
+      <span class="sticker sticker-2" aria-hidden="true">✨</span>
+      <span class="sticker sticker-3" aria-hidden="true">🍓</span>
+      <span class="sticker sticker-4" aria-hidden="true">🫶</span>
+
+      <div class="badge">💌 sebuah catatan kecil</div>
+
+      <h1 class="title">Surat Permintaan Maaf Spesial</h1>
+
+      <svg class="squiggle" viewBox="0 0 220 14" fill="none" aria-hidden="true">
+        <path
+          d="M4 8 C 30 2, 50 12, 74 7 S 120 3, 142 8 S 190 11, 216 6"
+          stroke="#ff9ec2"
+          stroke-width="5"
+          stroke-linecap="round"
+        />
+      </svg>
+
+      <p class="letter">
+        Dengan segenap hati dan raga, Saya
+        <span class="hl">Muhammad Ramadhan Setyo Nugroho</span>, meminta maaf dikarenakan
+        tidak Berterimakasih setelah Menerima Penjelasan dari
+        <span class="hl">Nona Fajrina</span> yang baik hati dan cantik. Dengan memohon
+        maaf sebesar besarnya 🙇‍♂️
+      </p>
+
+      <p class="hint" id="hint">Pilih salah satu ya… 🥺👉👈</p>
+
+      <div class="actions">
+        <button class="btn btn-yes" id="yesBtn" type="button">Maafin Rama</button>
+        <button class="btn btn-no" id="noBtn" type="button">Gak Mau!</button>
+      </div>
+    </main>
+
+    <footer>dibuat dengan 💖 oleh Rama, untuk Nona Fajrina</footer>
+
+    <script>
+      (function () {
+        "use strict";
+
+        /* ---------- floating background hearts ---------- */
+        var bg = document.getElementById("bg-float");
+        var floatEmojis = ["❤️", "🥺", "💖", "✨", "💕", "🌸", "🫶", "💗", "☁️", "💘"];
+        for (var i = 0; i < 18; i++) {
+          var f = document.createElement("span");
+          f.className = "floater";
+          f.textContent = floatEmojis[Math.floor(Math.random() * floatEmojis.length)];
+          var size = 16 + Math.random() * 26;
+          f.style.left = Math.random() * 100 + "%";
+          f.style.fontSize = size + "px";
+          f.style.animationDuration = 14 + Math.random() * 14 + "s";
+          f.style.animationDelay = -Math.random() * 20 + "s";
+          f.style.opacity = 0.35 + Math.random() * 0.4;
+          bg.appendChild(f);
+        }
+
+        var card = document.getElementById("card");
+        var yesBtn = document.getElementById("yesBtn");
+        var noBtn = document.getElementById("noBtn");
+        var hint = document.getElementById("hint");
+        var celebrated = false;
+
+        /* ---------- runaway "Gak Mau!" button ---------- */
+        var escapes = 0;
+        var lastEscape = 0;
+        var runawayLabels = [
+          "Gak Mau! 😤",
+          "Masih gak mau! 😝",
+          "Kejar dulu dong! 🏃‍♀️",
+          "Susaaah ditangkap 🤭",
+          "Oke aku nyerah 🥺",
+          "Plis maafin Rama 💔",
+          "Lah, kok masih ngejar 😳",
+        ];
+        var hintLines = [
+          "Hihihi, tombolnya kabur terus 😆",
+          "Coba lagi, siapa tau kena 😝",
+          "Klik yang hijau aja deh, lebih gampang 💚",
+          "Rama udah nangis nih 🥺👉👈",
+        ];
+
+        function moveButton(e) {
+          if (e && typeof e.preventDefault === "function") e.preventDefault();
+          var now = Date.now();
+          if (now - lastEscape < 130) return;
+          lastEscape = now;
+
+          var pad = 10;
+          var bw = noBtn.offsetWidth;
+          var bh = noBtn.offsetHeight;
+          var maxX = Math.max(window.innerWidth - bw - pad * 2, pad);
+          var maxY = Math.max(window.innerHeight - bh - pad * 2, pad);
+          var x = pad + Math.random() * maxX;
+          var y = pad + Math.random() * maxY;
+
+          noBtn.classList.add("escaped");
+          noBtn.style.left = x + "px";
+          noBtn.style.top = y + "px";
+
+          escapes++;
+          noBtn.textContent =
+            runawayLabels[Math.min(escapes - 1, runawayLabels.length - 1)];
+          if (escapes <= hintLines.length) hint.textContent = hintLines[escapes - 1];
+        }
+
+        /* run away before the pointer/tap can land on the button */
+        noBtn.addEventListener("pointerenter", moveButton);
+        noBtn.addEventListener(
+          "pointerdown",
+          function (e) {
+            e.preventDefault();
+            moveButton(e);
+          },
+          true
+        );
+        /* safety nets for older browsers / edge cases */
+        noBtn.addEventListener("mousemove", moveButton);
+        noBtn.addEventListener("touchstart", moveButton, { passive: false });
+        noBtn.addEventListener("click", moveButton);
+
+        /* ---------- confetti helpers ---------- */
+        var burstEmojis = ["❤️", "💖", "💗", "💕", "✨", "🌸", "🥳", "💘", "🫶", "🎉"];
+
+        function explode() {
+          var rect = card.getBoundingClientRect();
+          var cx = rect.left + rect.width / 2;
+          var cy = rect.top + rect.height / 2;
+          var count = 140;
+          for (var i = 0; i < count; i++) {
+            var s = document.createElement("span");
+            s.className = "burst";
+            s.textContent = burstEmojis[Math.floor(Math.random() * burstEmojis.length)];
+            s.style.left = cx + "px";
+            s.style.top = cy + "px";
+            s.style.fontSize = 13 + Math.random() * 20 + "px";
+
+            var angle = Math.random() * Math.PI * 2;
+            var dist = 90 + Math.random() * Math.min(window.innerWidth, 900) * 0.55;
+            s.style.setProperty("--tx", Math.cos(angle) * dist + "px");
+            s.style.setProperty("--ty", Math.sin(angle) * dist * 0.72 - 140 + "px");
+            s.style.setProperty("--rot", 180 + Math.random() * 360 + "deg");
+
+            var dur = 0.9 + Math.random() * 1.2;
+            s.style.animationDuration = dur + "s";
+            s.style.animationDelay = Math.random() * 0.25 + "s";
+            document.body.appendChild(s);
+            setTimeout(function () {
+              s.remove();
+            }, (dur + 0.4) * 1000);
+          }
+        }
+
+        function heartRain() {
+          for (var i = 0; i < 60; i++) {
+            (function (index) {
+              setTimeout(function () {
+                var r = document.createElement("span");
+                r.className = "rain";
+                r.textContent = burstEmojis[
+                  Math.floor(Math.random() * burstEmojis.length)
+                ];
+                r.style.left = Math.random() * 100 + "%";
+                r.style.fontSize = 14 + Math.random() * 22 + "px";
+                r.style.opacity = 0.55 + Math.random() * 0.4;
+                r.style.animationDuration = 2 + Math.random() * 1.8 + "s";
+                document.body.appendChild(r);
+                setTimeout(function () {
+                  r.remove();
+                }, 4200);
+              }, index * 45);
+            })(i);
+          }
+        }
+
+        /* ---------- forgiven! ---------- */
+        function celebrate() {
+          if (celebrated) return;
+          celebrated = true;
+
+          explode();
+          heartRain();
+
+          card.classList.add("celebrated");
+          card.innerHTML =
+            '<span class="sticker sticker-1" aria-hidden="true">🌸</span>' +
+            '<span class="sticker sticker-2" aria-hidden="true">✨</span>' +
+            '<span class="sticker sticker-3" aria-hidden="true">🍓</span>' +
+            '<span class="sticker sticker-4" aria-hidden="true">🥳</span>' +
+            '<div class="success-heart">💖</div>' +
+            '<h1 class="success-title">Yeayyy, dimaafkan! 🥳</h1>' +
+            "<p class=\"success-text\">Makasih banyak Nona Fajrina yang cantik! " +
+            "Janji nggak cuma di-read doang lagi deh! 🥳✨</p>" +
+            '<p class="success-sub">Rama janji bakal lebih perhatian mulai sekarang 💕</p>' +
+            '<button class="btn btn-again" type="button" id="againBtn">Ulangi lagi 🔁</button>';
+
+          document.title = "Dimaafkan! 🥳";
+
+          var againBtn = document.getElementById("againBtn");
+          againBtn.addEventListener("click", function () {
+            window.location.reload();
+          });
+        }
+
+        yesBtn.addEventListener("click", celebrate);
+      })();
+    </script>
+  </body>
+</html>
